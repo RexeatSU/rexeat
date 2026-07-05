@@ -1,0 +1,37 @@
+@startuml DiagramaCasosUsoComensal
+left to right direction
+skinparam style strictuml
+skinparam DefaultFontName "Helvetica"
+skinparam actor {
+    BackgroundColor White
+    BorderColor DarkSlateGray
+}
+skinparam usecase {
+    BackgroundColor White
+    BorderColor DarkSlateGray
+    ArrowColor DarkSlateGray
+}
+
+actor "Comensal" as comensal
+
+package "Acceso y Consulta" {
+    usecase accederCarta as "accederCarta()"
+    usecase consultarCarta as "consultarCarta()"
+    usecase consultarDetalleProducto as "consultarDetalleProducto()"
+    usecase consultarDetalleMenú as "consultarDetalleMenú()"
+}
+
+package "Traducción" {
+    usecase seleccionarIdioma as "seleccionarIdioma()"
+}
+
+comensal --> accederCarta
+comensal --> consultarCarta
+comensal --> consultarDetalleProducto
+comensal --> consultarDetalleMenú
+comensal --> seleccionarIdioma
+
+consultarCarta .> accederCarta : <<include>>
+consultarDetalleProducto .> consultarCarta : <<include>>
+consultarDetalleMenú .> consultarCarta : <<include>>
+@enduml

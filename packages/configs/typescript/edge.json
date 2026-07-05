@@ -1,7 +1,0 @@
-{
-  "extends": "./base.json",
-  "compilerOptions": {
-    "lib": ["ESNext"],
-    "moduleResolution": "bundler"
-  }
-}

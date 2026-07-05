@@ -1,0 +1,101 @@
+@startuml DiagramaCasosUsoGestion
+left to right direction
+skinparam style strictuml
+skinparam DefaultFontName "Helvetica"
+skinparam actor {
+    BackgroundColor White
+    BorderColor DarkSlateGray
+}
+skinparam usecase {
+    BackgroundColor White
+    BorderColor DarkSlateGray
+    ArrowColor DarkSlateGray
+}
+
+actor "Manager" as manager
+
+package "Gestión de Cartas y Categorías" {
+    usecase crearCarta as "crearCarta()"
+    usecase abrirCartas as "abrirCartas()"
+    usecase editarCarta as "editarCarta()"
+    usecase eliminarCarta as "eliminarCarta()"
+    usecase activarCarta as "activarCarta()"
+    
+    usecase crearCategoria as "crearCategoria()"
+    usecase listarCategorias as "listarCategorias()"
+    usecase editarCategoria as "editarCategoria()"
+    usecase eliminarCategoria as "eliminarCategoria()"
+}
+
+package "Gestión de Platos y Bebidas" {
+    usecase crearPlato as "crearPlato()"
+    usecase abrirPlatos as "abrirPlatos()"
+    usecase editarPlato as "editarPlato()"
+    usecase eliminarPlato as "eliminarPlato()"
+    
+    usecase crearBebida as "crearBebida()"
+    usecase abrirBebidas as "abrirBebidas()"
+    usecase editarBebida as "editarBebida()"
+    usecase eliminarBebida as "eliminarBebida()"
+    
+    usecase actualizarStock as "actualizarStockProducto()"
+}
+
+package "Gestión de Menús" {
+    usecase crearMenú as "crearMenú()"
+    usecase abrirMenús as "abrirMenús()"
+    usecase editarMenú as "editarMenú()"
+    usecase eliminarMenú as "eliminarMenú()"
+}
+
+package "Ingredientes y Alérgenos" {
+    usecase configurarIngrediente as "configurarIngredientePlato()"
+    usecase asociarAlergeno as "asociarAlergenoProducto()"
+}
+
+manager --> crearCarta
+manager --> abrirCartas
+manager --> editarCarta
+manager --> eliminarCarta
+manager --> activarCarta
+manager --> crearCategoria
+manager --> listarCategorias
+manager --> editarCategoria
+manager --> eliminarCategoria
+
+manager --> crearPlato
+manager --> abrirPlatos
+manager --> editarPlato
+manager --> eliminarPlato
+manager --> crearBebida
+manager --> abrirBebidas
+manager --> editarBebida
+manager --> eliminarBebida
+manager --> actualizarStock
+
+manager --> crearMenú
+manager --> abrirMenús
+manager --> editarMenú
+manager --> eliminarMenú
+
+manager --> configurarIngrediente
+manager --> asociarAlergeno
+
+' Relaciones <<include>>
+eliminarCarta .> abrirCartas : <<include>>
+editarCarta .> abrirCartas : <<include>>
+activarCarta .> abrirCartas : <<include>>
+
+eliminarCategoria .> listarCategorias : <<include>>
+editarCategoria .> listarCategorias : <<include>>
+
+eliminarPlato .> abrirPlatos : <<include>>
+editarPlato .> abrirPlatos : <<include>>
+
+eliminarBebida .> abrirBebidas : <<include>>
+editarBebida .> abrirBebidas : <<include>>
+
+eliminarMenú .> abrirMenús : <<include>>
+editarMenú .> abrirMenús : <<include>>
+
+@enduml
