@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TarjetaComida from '../components/TarjetaComida.astro';
+import { TipoProducto, Moneda, Alergeno } from '../types';
+import type { Plato } from '../types';
+
+const hamburguesa: Plato = {
+  id: 1,
+  tipo: TipoProducto.Plato,
+  nombre: "Hamburguesa Clásica",
+  precio: {
+    valor: 12.50,
+    moneda: Moneda.EUR
+  },
+  disponible: true,
+  categorias: ["carnes"],
+  alergenos: [Alergeno.Gluten, Alergeno.Lactosa],
+  descripcion: "Deliciosa hamburguesa con doble carne, queso cheddar fundido, lechuga fresca, tomate y salsa secreta en pan brioche artesanal.",
+  imagen: "/images/gourmet_cheeseburger.png",
+  ingredientes: [
+    {
+      id: 1,
+      nombre: "Carne de Vacuno",
+      alergenos: [],
+      cantidad: {
+        defecto: 2,
+        minima: 1,
+        maxima: 3,
+        unidad: "disco"
+      }
+    },
+    {
+      id: 2,
+      nombre: "Queso Cheddar",
+      alergenos: [Alergeno.Lactosa],
+      cantidad: {
+        defecto: 1,
+        minima: 0,
+        maxima: 3,
+        unidad: "loncha",
+        suplementoExtra: {
+          valor: 1.00,
+          moneda: Moneda.EUR
+        }
+      }
+    },
+    {
+      id: 3,
+      nombre: "Pan Brioche",
+      alergenos: [Alergeno.Gluten],
+      cantidad: {
+        defecto: 1,
+        minima: 1,
+        maxima: 1,
+        unidad: "unidad"
+      }
+    }
+  ]
+};
+---
+
+<Layout>
+  <main class="min-h-screen bg-stone-50/50 flex items-center justify-center p-4">
+    <TarjetaComida producto={hamburguesa} />
+  </main>
+</Layout>

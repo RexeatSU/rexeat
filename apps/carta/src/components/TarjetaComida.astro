@@ -1,0 +1,82 @@
+---
+import { Alergeno } from '../types';
+import type { Producto } from '../types';
+
+interface Props {
+  producto: Producto;
+}
+
+const { producto } = Astro.props;
+const { nombre, precio, descripcion, imagen, alergenos = [] } = producto;
+
+const formateadorPrecio = new Intl.NumberFormat('es-ES', {
+  style: 'currency',
+  currency: precio.moneda,
+});
+const precioFormateado = formateadorPrecio.format(precio.valor);
+
+const etiquetasAlergenos: Record<Alergeno, string> = {
+  [Alergeno.Gluten]: "🌾 Gluten",
+  [Alergeno.Lactosa]: "🥛 Lactosa",
+  [Alergeno.Crustaceos]: "🦀 Crustáceos",
+  [Alergeno.Huevos]: "🥚 Huevos",
+  [Alergeno.Pescado]: "🐟 Pescado",
+  [Alergeno.Cacahuetes]: "🥜 Cacahuetes",
+  [Alergeno.Soja]: "🫘 Soja",
+  [Alergeno.FrutosSecos]: "🌰 Frutos Secos",
+  [Alergeno.Apio]: "🥬 Apio",
+  [Alergeno.Mostaza]: "🍯 Mostaza",
+  [Alergeno.Sesamo]: "🌱 Sésamo",
+  [Alergeno.Sulfitos]: "🍇 Sulfitos",
+  [Alergeno.Altramuces]: "🌼 Altramuces",
+  [Alergeno.Moluscos]: "🐚 Moluscos",
+};
+---
+
+<label 
+  class="group relative block w-72 h-72 has-[:checked]:h-[430px] bg-stone-50 rounded-2xl cursor-pointer shadow-lg border border-stone-200/10 overflow-hidden transition-all duration-500 ease-in-out focus-within:ring-2 focus-within:ring-amber-500 focus-within:ring-offset-2"
+>
+  <input type="checkbox" class="sr-only" aria-label="Mostrar detalles de plato" />
+
+  <div class="relative z-10 w-full h-72 group-has-[:checked]:h-40 shadow-md overflow-hidden transition-all duration-500 ease-in-out">
+    <img 
+      src={imagen} 
+      alt={nombre} 
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+    />
+    
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 group-has-[:checked]:!opacity-0 group-has-[:checked]:pointer-events-none transition-opacity duration-300">
+      <h3 class="text-white font-extrabold text-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+        {nombre}
+      </h3>
+      <span class="text-amber-400 font-extrabold text-lg mt-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+        {precioFormateado}
+      </span>
+    </div>
+  </div>
+
+  <div class="absolute z-0 top-40 left-0 w-full h-[270px] p-6 bg-white border-t border-stone-100 flex flex-col justify-between -translate-y-full group-has-[:checked]:translate-y-0 transition-transform duration-500 ease-in-out">
+    <div>
+      <div class="flex justify-between items-start gap-2 mb-2">
+        <h3 class="font-extrabold text-stone-900 text-lg leading-tight">{nombre}</h3>
+        <span class="font-extrabold text-amber-600 text-lg shrink-0">{precioFormateado}</span>
+      </div>
+      <p class="text-xs text-stone-600 leading-relaxed">
+        {descripcion}
+      </p>
+    </div>
+
+    {alergenos.length > 0 && (
+      <div class="mt-4">
+        <span class="block text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-2">Alérgenos</span>
+        <div class="flex flex-wrap gap-1.5">
+          {alergenos.map(alergeno => (
+            <span class="bg-stone-100 border border-stone-200 px-2.5 py-0.5 rounded-full text-[10px] text-stone-600 font-medium flex items-center gap-0.5">
+              {etiquetasAlergenos[alergeno]}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</label>
