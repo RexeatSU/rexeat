@@ -1,0 +1,10 @@
+export enum Alergeno {
+  GLUTEN = 'GLUTEN',
+  LACTOSA = 'LACTOSA',
+  FRUTOS_SECOS = 'FRUTOS_SECOS',
+  PESCADO = 'PESCADO',
+  MARISCO = 'MARISCO',
+  HUEVO = 'HUEVO',
+  SOJA = 'SOJA',
+  SULFITOS = 'SULFITOS',
+}
