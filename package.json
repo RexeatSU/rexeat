@@ -1,8 +1,0 @@
-{
-  "name": "rexeat-monorepo",
-  "private": true,
-  "scripts": {
-    "dev:carta": "pnpm --filter carta dev",
-    "build:carta": "pnpm --filter carta build"
-  }
-}
