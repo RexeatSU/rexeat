@@ -32,10 +32,4 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
-.agents/skills/boy-scout/SKILL.md
-.agents/skills/clean-comments/SKILL.md
-.agents/skills/clean-functions/SKILL.md
-.agents/skills/clean-general/SKILL.md
-.agents/skills/clean-names/SKILL.md
-.agents/skills/clean-tests/SKILL.md
-.agents/skills/typescript-clean-code/SKILL.md
+.agents/*
