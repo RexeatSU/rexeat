@@ -1,0 +1,76 @@
+@startuml ModeloDominioRexeat
+skinparam style strictuml
+skinparam DefaultFontName "Helvetica"
+skinparam class {
+    BackgroundColor White
+    BorderColor DarkSlateGray
+    ArrowColor DarkSlateGray
+}
+
+class Carta {
+    nombre: String
+    activa: Boolean
+}
+
+class Menú {
+    activo: Boolean
+}
+
+class Categoría {
+    nombre: String
+}
+
+abstract class Producto {
+    nombre: String
+    precio: Decimal
+    stock: Boolean
+    disponible: Boolean
+}
+
+class Plato {
+    descripcion: String
+    imagen: String
+}
+
+class Bebida {
+    descripcion: String
+    alcohol: Boolean
+    marca: String
+    denominacionOrigen: String
+}
+
+enum Alergeno {
+    GLUTEN
+    LACTOSA
+    FRUTOS_SECOS
+    PESCADO
+    MARISCO
+    HUEVO
+    SOJA
+    SULFITOS
+}
+
+' Herencia de Productos (Patrón Composite)
+Producto <|-- Plato
+Producto <|-- Bebida
+Producto <|-- Menú
+
+' Estructura de la Carta
+Carta "1" -- "0..*" Menú : contiene >
+Carta "1" -- "0..*" Categoría : contiene >
+Carta "1" -- "0..*" Producto : contiene >
+
+' Relaciones de Categorías (Etiquetas)
+Categoría "0..*" -- "0..*" Producto : clasifica >
+
+' Estructura interna del Menú
+Menú "1" -- "1..*" Producto : ordena subjetivamente >
+
+' Relación de Alérgenos
+Producto "0..*" -- "0..*" Alergeno : contiene >
+
+note bottom of Producto
+    Los alérgenos de un Menú se derivan en cascada de sus Productos.
+end note
+
+@endum
