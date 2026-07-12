@@ -21,6 +21,8 @@ class Categoría {
 }
 
 abstract class Producto {
+    id: String
+    slug: String
     nombre: String
     precio: Decimal
     stock: Boolean

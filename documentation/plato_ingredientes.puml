@@ -1,0 +1,35 @@
+@startuml DetallePlato
+skinparam style strictuml
+skinparam DefaultFontName "Helvetica"
+skinparam class {
+    BackgroundColor White
+    BorderColor DarkSlateGray
+    ArrowColor DarkSlateGray
+}
+
+class Plato {
+    descripcion: String
+    imagen: String
+}
+
+class Ingrediente {
+    nombre: String
+    suplementoExtra: Decimal
+}
+
+class Cantidad <<Value Object>> {
+    defecto: Integer
+    minima: Integer
+    maxima: Integer
+}
+
+class Medida <<Value Object>> {
+    singular: String
+    plural: String
+}
+
+Plato "1" *-- "1..*" Ingrediente : contiene >
+Ingrediente "1" *-- "1" Cantidad : contiene >
+Cantidad "1" *-- "1" Medida : unidadMedida >
+
+@endum
