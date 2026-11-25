@@ -1,20 +1,77 @@
-# Entorno y agentes
+# Agentes y herramientas
 .omp/*
+.agents/
+
+# Editores
+.vscode/
+.idea/
+*.iml
+*.swp
+*~
 
 # macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
 
 # Node / monorepo
 node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.npm/
 .turbo/
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
 dist/
 build/
+out/
 coverage/
+*.tsbuildinfo
+.eslintcache
 
-# Entorno
+# Pruebas
+playwright-report/
+test-results/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Bases de datos locales
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Entorno y secretos
 .env
 .env.*
 !.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.jks
 
 # Logs
 *.log
+logs/
