@@ -1,1 +1,20 @@
+# Entorno y agentes
 .omp/*
+
+# macOS
+.DS_Store
+
+# Node / monorepo
+node_modules/
+.turbo/
+dist/
+build/
+coverage/
+
+# Entorno
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
