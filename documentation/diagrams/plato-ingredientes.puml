@@ -10,17 +10,20 @@ skinparam class {
 class Plato {
     descripcion: String
     imagen: String
+    ingredientes: Ingrediente[]
 }
 
 class Ingrediente {
     nombre: String
     suplementoExtra: Decimal
+    cantidad: Cantidad
 }
 
 class Cantidad <<Value Object>> {
     defecto: Integer
     minima: Integer
     maxima: Integer
+    unidadMedida: Medida
 }
 
 class Medida <<Value Object>> {

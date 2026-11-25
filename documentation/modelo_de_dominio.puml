@@ -1,11 +1,4 @@
 @startuml ModeloDominioRexeat
-skinparam style strictuml
-skinparam DefaultFontName "Helvetica"
-skinparam class {
-    BackgroundColor White
-    BorderColor DarkSlateGray
-    ArrowColor DarkSlateGray
-}
 
 class Carta {
     nombre: String
