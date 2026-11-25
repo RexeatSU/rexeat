@@ -1,10 +1,10 @@
 # Agentes y herramientas
 .omp/*
-.agents/
 
 # Editores
 .vscode/
 .idea/
+.claude/
 *.iml
 *.swp
 *~
