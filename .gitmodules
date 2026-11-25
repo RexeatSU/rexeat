@@ -1,4 +1,4 @@
 [submodule "docs/internal"]
 	path = docs/internal
 	url = git@github.com:RexeatSU/Documentacion-Rexeat.git
-	branch = Documentacion
+	branch = main
