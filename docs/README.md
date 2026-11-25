@@ -25,6 +25,8 @@ clasificacion: interno
 | `08-gestion/`      | Changelog y releases                                                   |
 | `09-manuales/`     | Manual de usuario                                                      |
 
+`docs/internal/` es un submódulo privado (`RexeatSU/Documentacion-Rexeat`, rama `Documentacion`). Requiere acceso; si clonas sin permisos, usa `git clone` sin `--recurse-submodules`.
+
 ## 2. Esquema de metadatos
 
 Todo documento comienza con este bloque YAML:
