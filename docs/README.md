@@ -18,16 +18,12 @@ clasificacion: interno
 | Carpeta            | Contenido                                                             |
 | ------------------ | --------------------------------------------------------------------- |
 | `00-gobernanza/`   | Control documental, glosario, convenciones y plantillas               |
-| `01-negocio/`      | Visión, alcance, caso de negocio y stakeholders                       |
 | `02-requisitos/`   | Requisitos funcionales y no funcionales, casos de uso y trazabilidad  |
 | `03-arquitectura/` | Documento arc42, vistas C4, dominio, datos, integraciones, API y ADR  |
 | `04-diseno/`       | Diseño de experiencia de usuario y estándares de código               |
 | `05-calidad/`      | Estrategia y plan de pruebas, criterios de aceptación y deuda técnica |
-| `06-seguridad/`    | Modelo de amenazas, control de accesos y privacidad/cumplimiento      |
-| `07-operaciones/`  | Entornos, CI/CD, observabilidad, SLO, continuidad y runbooks          |
-| `08-gestion/`      | Hoja de ruta, riesgos, changelog y releases                           |
-| `09-manuales/`     | Manuales de usuario y administración, onboarding técnico              |
-| `10-reuniones/`    | Actas y registros de reunión                                          |
+| `08-gestion/`      | Changelog y releases                                                   |
+| `09-manuales/`     | Manual de usuario                                                      |
 
 ## 2. Esquema de metadatos
 

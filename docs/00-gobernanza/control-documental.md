@@ -38,9 +38,15 @@ clasificacion: interno
 
 ## 4. Revisión y aprobación
 
-| Tipo de documento | Revisores mínimos | Vigencia de revisión |
-| ----------------- | ----------------- | -------------------- |
-|                   |                   |                      |
+Solo ADR, requisitos, SLO y seguridad son normativos: un cambio requiere revisión y puede bloquear el merge. El resto de documentos es descriptivo y se corrige sin gate.
+
+| Tipo de documento | Revisores mínimos | Vigencia de revisión                         |
+| ----------------- | ----------------- | -------------------------------------------- |
+| ADR               | 1                 | Permanente; se revisa si cambia la decisión  |
+| Requisitos        | 1                 | Por release                                  |
+| SLO               | 1                 | Trimestral                                   |
+| Seguridad         | 1                 | Anual y tras incidente                       |
+| Resto             | 0                 | Al modificarse                               |
 
 ## 5. Retención y archivo
 
