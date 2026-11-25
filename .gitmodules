@@ -1,5 +1,5 @@
 [submodule "docs/internal"]
 	path = docs/internal
 	url = git@github.com:RexeatSU/Documentacion-Rexeat.git
-	branch = producto-v2
+	branch = Documentacion
 	update = none
