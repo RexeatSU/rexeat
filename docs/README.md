@@ -25,7 +25,7 @@ clasificacion: interno
 | `08-gestion/`      | Changelog y releases                                                   |
 | `09-manuales/`     | Manual de usuario                                                      |
 
-`docs/internal/` es un submódulo privado (`RexeatSU/Documentacion-Rexeat`, rama `main`). Requiere acceso; si clonas sin permisos, usa `git clone` sin `--recurse-submodules`.
+`docs/internal/` es un submódulo privado (`RexeatSU/Documentacion-Rexeat`, rama `main`). Tiene `update = none`: un clon con `--recurse-submodules` no falla si no tienes acceso. Si tienes permisos, inicialízalo con `git submodule update --init --checkout docs/internal`.
 
 ## 2. Esquema de metadatos
 
