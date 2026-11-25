@@ -80,3 +80,13 @@ clasificacion: interno  # publico | interno | confidencial
 2. Asignar `id`, `titulo` y `propietario`.
 3. Registrar el documento en `00-gobernanza/control-documental.md`.
 4. Completar secciones y enviar a revisión.
+
+## 7. Pendiente
+
+| Tema | Estado |
+| --- | --- |
+| UX y pantallas | Diferido hasta que exista frontend |
+| Manual de usuario | Completar cuando el producto esté cerrado |
+| Plan de pruebas detallado y criterios de aceptación | Antes de implementar |
+| Métricas y SLO | Definir cifras antes del piloto |
+| API pública y OpenAPI | Solo si se abre a terceros |
