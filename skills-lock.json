@@ -21,6 +21,13 @@
       "sourceType": "github",
       "skillPath": "skills/productivity/grilling/SKILL.md",
       "computedHash": "485451958784497cd4c4dbea13cb5bbb579da58fac0d0e45f3bcb310fab68ac7"
+    },
+    "ponytail": {
+      "source": "DietrichGebert/ponytail",
+      "commit": "ebd8654c2c627f721eb8f9c0d1bd4090a29f9e10",
+      "sourceType": "github",
+      "skillPath": "skills/ponytail/SKILL.md",
+      "computedHash": "56d72677aca02689ac89bd48734e8c19b40ab86716d1257eaf5f1238b43cda6b"
     }
   }
 }
